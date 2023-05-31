@@ -1,0 +1,40 @@
+<article class="container">
+  <header class="header">
+    <h1>🤟 Hola, Soy {{ user.login }} Bienvenido a mis proyectos</h1>
+    <div class="grid">
+      <div class="image">
+        <img [src]="user.avatar_url" alt="" />
+      </div>
+
+      <div>
+        <h2>{{user.name}}</h2>
+        <p>{{ user.bio }}</p>
+        <span class="grid">
+          <p>
+            <i class="fa-solid fa-hammer"></i> Repos: {{ user.public_repos }}
+          </p>
+          <p><i class="fa-solid fa-eye"></i> Followers: {{ user.followers }}</p>
+        </span>
+        <button (click)="openLink(user.blog)">Ir a la web</button>
+      </div>
+    </div>
+  </header>
+
+  <span class="card" *ngFor="let repo of repos$ | async">
+    <article>
+      <header>
+        <h3>{{ repo.name.replaceAll("-", " ").replaceAll("_", " ") }}</h3>
+      </header>
+      <p>{{ repo.description }}</p>
+
+      <div class="grid">
+        <button (click)="openLink(repo.html_url)" target="_blank">
+          <i class="fa-brands fa-github"></i> Repositorio
+        </button>
+        <button (click)="openLink(repo.homepage)" target="_blank">
+          <i class="fa-brands fa-github"></i> Proyecto
+        </button>
+      </div>
+    </article>
+  </span>
+</article>

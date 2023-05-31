@@ -1,0 +1,15 @@
+<nav>
+    <ul class="brand">
+      <li><strong>Tu Portfolio</strong></li>
+    </ul>
+    <ul>
+        <button (click)="changeTheme(theme)">
+            <span *ngIf="theme === 'dark'">
+                <i class="fa-solid fa-sun"></i>
+            </span>
+            <span *ngIf="theme === 'ligth'">
+                <i class="fa-solid fa-moon"></i>
+            </span>
+        </button>        
+    </ul>
+  </nav>

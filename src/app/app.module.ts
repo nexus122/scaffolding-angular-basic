@@ -10,9 +10,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LenguajeSelectorComponent } from './components/lenguaje-selector/lenguaje-selector.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, LenguajeSelectorComponent],
+  declarations: [AppComponent, LenguajeSelectorComponent, PortfolioComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
